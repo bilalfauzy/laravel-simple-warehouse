@@ -24,9 +24,7 @@
                                 <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
                                     value="{{ old('name') }}">
                                 @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>
@@ -39,9 +37,7 @@
                                     class="form-control @error('quantity') is-invalid @enderror"
                                     value="{{ old('quantity') }}" min="1">
                                 @error('quantity')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>
@@ -54,9 +50,7 @@
                                     class="form-control @error('price') is-invalid @enderror" value="{{ old('price') }}"
                                     min="1">
                                 @error('price')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>
@@ -65,12 +59,11 @@
                         <div class="form-group row mb-4">
                             <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Deskripsi</label>
                             <div class="col-sm-12 col-md-7">
-                                <textarea name="description"
-                                    class="summernote-simple @error('description') is-invalid @enderror">{{ old('description') }}</textarea>
+                                <textarea style="width: 100%; height: 200px; min-height: 150px; max-height: 280px;"
+                                    name="description"
+                                    class="text @error('description') is-invalid @enderror">{{ old('description') }}</textarea>
                                 @error('description')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>

@@ -41,7 +41,7 @@
           <td>{{$product->name}}</td>
 
           <td>{{$product->quantity}}</td>
-          <td>{{$product->price}}</td>
+          <td>{{ (int) $product->price}}</td>
           <td>{{$product->description}}</td>
           <td>{{$product->created_at->format('d-m-Y')}}</td>
           <td>{{$product->updated_at->format('d-m-Y')}}</td>
@@ -49,10 +49,11 @@
             <form onsubmit="return confirm('Apakah Anda Yakin ?');"
             action="{{ route('product.destroy', $product->id) }}" method="POST">
 
-            <a href="{{ route('product.edit', $product->id) }}" class="btn btn-sm btn-primary">EDIT</a>
+            <a href="{{ route('product.edit', $product->id) }}"
+              class="btn btn-sm btn-primary mb-1 mt-1 w-100">EDIT</a>
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn btn-sm btn-danger">DELETE</button>
+            <button type="submit" class="btn btn-sm btn-danger mb-1 mt-1 w-100">DELETE</button>
             </form>
           </td>
           </tr>

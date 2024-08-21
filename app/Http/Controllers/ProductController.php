@@ -27,7 +27,12 @@ class ProductController extends Controller
             'name' => 'required|max:255',
             'quantity' => 'required|integer|min:1',
             'price' => 'required|numeric|min:0',
-            'description' => 'required',
+            'description' => [
+                'required',
+                'string',
+                'min:10',
+                'max:1000',
+            ]
         ]);
 
         $existingProduct = Product::where('name', $request->name)->first();
@@ -59,9 +64,14 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required|max:255',
-            'quantity' => 'required',
-            'price' => 'required',
-            'description' => 'required',
+            'quantity' => 'required|integer|min:1',
+            'price' => 'required|numeric|min:0',
+            'description' => [
+                'required',
+                'string',
+                'min:10',
+                'max:1000',
+            ],
         ]);
         Product::findOrFail($id)->update($request->all());
         return redirect()->route('product.index')

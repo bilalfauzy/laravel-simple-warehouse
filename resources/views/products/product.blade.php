@@ -24,7 +24,7 @@
                                 <input type="text" name="name" class="form-control"
                                     value="{{ old('name', $product->name) }}">
                                 @error('name')
-                                    <div class="text-danger">{{ $message }}</div>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>
@@ -35,7 +35,7 @@
                                 <input type="number" name="quantity" class="form-control"
                                     value="{{ old('quantity', $product->quantity) }}" min="1">
                                 @error('quantity')
-                                    <div class="text-danger">{{ $message }}</div>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>
@@ -46,7 +46,7 @@
                                 <input type="number" name="price" class="form-control"
                                     value="{{ old('price', $product->price) }}" min="1">
                                 @error('price')
-                                    <div class="text-danger">{{ $message }}</div>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>
@@ -54,10 +54,11 @@
                         <div class="form-group row mb-4">
                             <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Deskripsi</label>
                             <div class="col-sm-12 col-md-7">
-                                <textarea name="description"
-                                    class="summernote-simple">{{ old('description', $product->description) }}</textarea>
+                                <textarea style="width: 100%; height: 200px; min-height: 150px; max-height: 280px;"
+                                    name="description"
+                                    class="text">{{ old('description', $product->description) }}</textarea>
                                 @error('description')
-                                    <div class="text-danger">{{ $message }}</div>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>
